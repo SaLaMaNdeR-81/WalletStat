@@ -1,0 +1,32 @@
+// =========================
+
+.HeaderBox {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0px 2px 20px rgb(230, 109, 109);
+}
+
+.Category-Menu {
+  position: absolute;
+  //   user-select: none;
+
+  padding: 3px;
+  padding-bottom: 5px;
+  right: 10px;
+
+  text-align: center;
+
+  font-size: 12px;
+  border-bottom: 1px solid gainsboro;
+
+  &:active {
+    color: gold;
+  }
+
+  //   ===
+}

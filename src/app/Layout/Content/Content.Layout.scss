@@ -1,0 +1,13 @@
+@import url("../../../assets/Css/Icon.Style.scss");
+
+.ContentBox {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  //   border: 1px solid red;
+}

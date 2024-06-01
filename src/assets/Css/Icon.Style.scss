@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "pelatoff";
+  src: url("../Font/pelatoff.ttf");
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "pelatoff";
+  font-style: normal;
+  font-weight: normal;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+
+  margin-left: 0.2em;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[name^="icon-"]:before,
+[name*=" icon-"]:before {
+  font-family: "pelatoff";
+  font-style: normal;
+  font-weight: normal;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+
+  margin-left: 0.2em;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.Icon-user:before {
+  content: "\e800";
+} /* '' */
+.Icon-chart:before {
+  content: "\e801";
+} /* '' */
+.Icon-Remove:before {
+  content: "\e802";
+} /* '' */
+.Icon-ArrowDown:before {
+  content: "\e803";
+} /* '' */
+.Icon-ArrowLeft:before {
+  content: "\e804";
+} /* '' */
+.Icon-ArrowRight:before {
+  content: "\e805";
+} /* '' */
+.Icon-ArrowUp:before {
+  content: "\e806";
+} /* '' */
+.Icon-clipboard:before {
+  content: "\e807";
+} /* '' */
+.Icon-Add:before {
+  content: "\e808";
+} /* '' */
+.Icon-Home:before {
+  content: "\e809";
+} /* '' */
+.Icon-th-thumb:before {
+  content: "\f00a";
+} /* '' */
+.Icon-Cube:before {
+  content: "\f2b0";
+} /* '' */
+
+// ==============================
+
+Pl-Icon {
+  position: relative;
+  user-select: none;
+  font-size: 30px;
+  margin: 20px;
+
+  &:hover {
+    color: goldenrod;
+  }
+
+  &:active {
+    color: greenyellow;
+    transform: translateY(20px);
+  }
+
+  /* === */
+}

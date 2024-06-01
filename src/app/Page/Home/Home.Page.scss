@@ -1,0 +1,55 @@
+.PageHome {
+  position: absolute;
+  inset: 0;
+
+  padding: 10px;
+  padding-top: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  //   border: 1px solid red;
+}
+
+// ====================================
+
+.Btn-Add {
+  position: absolute;
+  user-select: none;
+  z-index: 1000;
+
+  bottom: 20px;
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+
+  border-radius: 100%;
+  border: 3px dotted green;
+
+  &:active {
+    border-style: double;
+  }
+
+  //   ===
+}
+
+// ====================================
+
+.Payment-Card {
+  position: relative;
+
+  width: 300px;
+  height: 100px;
+
+  border-radius: 5px;
+  border: 1px solid red;
+}
+
+// ====================================
