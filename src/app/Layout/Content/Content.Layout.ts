@@ -9,6 +9,8 @@ export class LayoutContent {
 
   LocalItem: any = localStorage.getItem('LocalItem')
 
+  PageState:string = "Home"
+
   constructor(){
 
     if(!this.LocalItem){

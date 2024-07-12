@@ -1,0 +1,15 @@
+<div style="filter: drop-shadow(0px 2px 4px rgba(248, 248, 248, 0.521));">
+<div class="PaymentCard-Box">
+
+    <!-- <div class="Payment-Card" *ngFor=" let payment of PaymentData "> -->
+
+        <div class="Payment-Title"> {{PaymentData.title}} </div>
+        <div class="Payment-Description"> {{CutLongtext(PaymentData.Description)}} </div>
+        <div class="Payment-Price"> {{PaymentData.Price.toLocaleString()}} ᵀ </div>
+        <div class="Payment-TimeAge"> {{GenarateTimeAge(PaymentData.Creation)}} </div>
+        <div class="Payment-Status"> {{PaymentData.Status[0]}} </div>
+
+    <!-- </div> -->
+
+</div>
+</div>

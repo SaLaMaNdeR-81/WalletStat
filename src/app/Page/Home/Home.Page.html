@@ -1,14 +1,41 @@
-<div class="PageHome">
+<div class="PageHome" >
 
-    <div class="Btn-Add"> + </div>
+    <div class="Btn-Add Close" *ngIf="NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> X </div>
+    <div class="Btn-Add Save" *ngIf="NewPaymentMenu" (click)="null" @scaleInOut>  O </div>
+    <div class="Btn-Add" *ngIf="!NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> + </div>
+    
+    <!-- <div class="Btn-Add Close" *ngIf="NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> <ion-icon name="close"></ion-icon> </div> -->
+    <!-- <div class="Btn-Add Save" *ngIf="NewPaymentMenu" (click)="null" @scaleInOut> <ion-icon name="ellipse-outline"></ion-icon> </div> -->
+    <!-- <div class="Btn-Add" *ngIf="!NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> <ion-icon name="add"></ion-icon> </div> -->
+    
+    <div class="PaymentBox"*ngIf="!NewPaymentMenu">
+        
+        <div class="EmptyListText" *ngIf="!PaymentData"> Empty List <ion-icon name="warning-outline"/> </div>
+        <div class="EmptyListText" *ngIf="PaymentData"> PayMent List </div>
+        
+        <div *ngFor=" let Payment of PaymentData ">
+            <PaymentCard [PaymentData]="Payment"/>
+        </div>
 
-    <div class="Payment-Card" *ngFor=" let payment of PaymentData ">
+    </div>
 
-        <div class="Payment-Title"> {{payment.title}} </div>
-        <div class="Payment-Description"> {{payment.Description}} </div>
-        <div class="Payment-Price"> {{payment.Price}} </div>
-        <div class="Payment-TimeAge"> {{GenarateTimeAge(payment.Creation)}} </div>
-        <div class="Payment-Status"> {{payment.Status}} </div>
+    <div class="NewPaymentBox" *ngIf="NewPaymentMenu" @scaleInOut>
+
+        <div class="NewPaymentText" *ngIf="PaymentData"> New Payment </div>
+
+        <label class="NewPaymentLable-Title" > Title </label>
+        <input    class="NewPayment-Title" type="text" placeholder="Title">
+        
+        <!-- <label class="NewPaymentLable-Description" > Description </label> -->
+        <!-- <textarea class="NewPayment-Description" placeholder="Description" ></textarea> -->
+        
+        <!-- <label class="NewPaymentLable-Status" > Status </label> -->
+        <!-- <input    class="NewPayment-Status" type="text" placeholder="Status"> -->
+        
+        <!-- <label class="NewPaymentLable-Price" > Price </label> -->
+        <!-- <input    class="NewPayment-Price" type="number" placeholder="Price" max="16"> -->
+
+        <!-- <input    class="NewPayment-Date" type="date"> -->
 
     </div>
 

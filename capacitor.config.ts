@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.example.app',
-  appName: 'wallet-stat',
+  appName: 'WalletState',
   
   webDir: 'www',
   server: {
