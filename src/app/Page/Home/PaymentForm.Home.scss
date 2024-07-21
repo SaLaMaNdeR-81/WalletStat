@@ -1,0 +1,186 @@
+$PerimeryBackGround: #242424;
+$BoarderColor: green;
+$Clippath_Title: polygon(0% 20%, 20% 0%, 100% 0%, 100% 100%, 0% 100%);
+$Clippath_Description: polygon(
+  0% 20%,
+  20% 0%,
+  100% 0%,
+  100% 80%,
+  80% 100%,
+  0% 100%
+);
+$Clippath_Status: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 7% 70%, 7% 30%);
+$Clippath_Price: polygon(0% 0%, 100% 0%, 93% 40%, 93% 60%, 100% 100%, 0% 100%);
+
+@mixin RestInput() {
+  text-align: center;
+  outline: unset;
+  padding: 3px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom-color: gray;
+  color: #fff;
+
+  &:focus {
+    border-bottom-color: lightgreen;
+  }
+}
+@mixin CenterFlex() {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+}
+@mixin ClipPathBefor($clipPath) {
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+
+    inset: 1px;
+    clip-path: $clipPath;
+    background: $PerimeryBackGround;
+  }
+}
+
+.DropShadow {
+  filter: drop-shadow(0 0px 2px $BoarderColor);
+}
+
+// ====================================
+
+.PaymentForm-Title {
+  @include CenterFlex();
+  @include ClipPathBefor($Clippath_Title);
+  position: absolute;
+
+  width: 200px;
+  height: 45px;
+
+  top: 42px;
+  right: 20px;
+
+  box-shadow: 0px 2px 3px #fff;
+  clip-path: $Clippath_Title;
+
+  &::after {
+    content: "Title";
+    position: absolute;
+    font-size: 12px;
+    letter-spacing: 2px;
+    top: 3px;
+    right: 3px;
+  }
+
+  & input {
+    @include RestInput();
+    position: absolute;
+    width: 90%;
+    bottom: 10px;
+  }
+
+  //   ===
+}
+
+.PaymentForm-Description {
+  @include CenterFlex();
+  @include ClipPathBefor($Clippath_Description);
+  position: absolute;
+
+  width: 90%;
+  height: 126px;
+
+  top: 106px;
+  right: 20px;
+
+  box-shadow: 0px 2px 3px #fff;
+  clip-path: $Clippath_Description;
+
+  &::after {
+    content: "Description";
+    position: absolute;
+    font-size: 12px;
+    letter-spacing: 2px;
+    top: 3px;
+    right: 3px;
+  }
+
+  & textarea {
+    @include RestInput();
+    text-align: end;
+    padding: 5px;
+    padding-right: 7px;
+    position: absolute;
+    width: 90%;
+    top: 20px;
+    bottom: 30px;
+    right: 5px;
+  }
+
+  //   ===
+}
+
+.PaymentForm-Price {
+  @include CenterFlex();
+  @include ClipPathBefor($Clippath_Price);
+  position: absolute;
+
+  width: 120px;
+  height: 50px;
+
+  top: 250px;
+  left: 20px;
+
+  box-shadow: 0px 2px 3px #fff;
+  clip-path: $Clippath_Price;
+
+  &::after {
+    content: "Price";
+    position: absolute;
+    font-size: 12px;
+    letter-spacing: 2px;
+    top: 3px;
+    left: 3px;
+  }
+
+  //   ===
+}
+
+.PaymentForm-Status {
+  @include CenterFlex();
+  @include ClipPathBefor($Clippath_Status);
+  // overflow: auto;
+  position: absolute;
+
+  width: 120px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 250px;
+  right: 20px;
+
+  box-shadow: 0px 2px 3px #fff;
+  clip-path: $Clippath_Status;
+
+  //   ===
+}
+
+& input {
+  @include RestInput();
+  position: absolute;
+  width: 80%;
+  bottom: 10px;
+}
+
+// ====================================
+
+.PaymentFormStatus-Title {
+  position: relative;
+}
+
+// ====================================

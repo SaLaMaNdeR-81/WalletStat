@@ -176,13 +176,15 @@
 .NewPayment-Description {
   @include DefaultPaymentForm();
   position: absolute;
+  resize: none;
 
   top: 100px;
   left: 20px;
   height: 200px;
   right: 20px;
 
-  resize: none;
+  background: greenyellow;
+  // clip-path: $Clippath_Description;
 
   padding: 7px;
   box-shadow: inset 0px 1px 10px gray;
@@ -191,6 +193,15 @@
 
   &:focus {
     box-shadow: inset 0px 1px 10px white;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+
+    inset: 1px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 70%);
+
+    background: #242424;
   }
 
   // ===

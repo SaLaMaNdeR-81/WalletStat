@@ -1,4 +1,5 @@
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ModuleHomePage } from './Page/Home/HomePage.module';
@@ -22,6 +23,7 @@ import { PageList } from './Page/List/List.Page';
   ],
   imports: [
     ModuleHomePage,
+    FormsModule,
     BrowserAnimationsModule,
 
     BrowserModule,

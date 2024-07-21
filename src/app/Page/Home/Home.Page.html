@@ -1,7 +1,7 @@
 <div class="PageHome" >
 
     <div class="Btn-Add Close" *ngIf="NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> X </div>
-    <div class="Btn-Add Save" *ngIf="NewPaymentMenu" (click)="null" @scaleInOut>  O </div>
+    <div class="Btn-Add Save" *ngIf="NewPaymentMenu" (click)="SaveNewPaymentHandle()" @scaleInOut>  O </div>
     <div class="Btn-Add" *ngIf="!NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> + </div>
     
     <!-- <div class="Btn-Add Close" *ngIf="NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> <ion-icon name="close"></ion-icon> </div> -->
@@ -21,22 +21,22 @@
 
     <div class="NewPaymentBox" *ngIf="NewPaymentMenu" @scaleInOut>
 
-        <div class="NewPaymentText" *ngIf="PaymentData"> New Payment </div>
+        <div class="NewPaymentText"> New Payment </div>
 
-        <label class="NewPaymentLable-Title" > Title </label>
-        <input    class="NewPayment-Title" type="text" placeholder="Title">
-        
-        <!-- <label class="NewPaymentLable-Description" > Description </label> -->
-        <!-- <textarea class="NewPayment-Description" placeholder="Description" ></textarea> -->
-        
-        <!-- <label class="NewPaymentLable-Status" > Status </label> -->
-        <!-- <input    class="NewPayment-Status" type="text" placeholder="Status"> -->
-        
-        <!-- <label class="NewPaymentLable-Price" > Price </label> -->
-        <!-- <input    class="NewPayment-Price" type="number" placeholder="Price" max="16"> -->
+        <!-- <label class="NewPaymentLable-Title" > Title </label> -->
+        <!-- <input    class="NewPayment-Title Form-Box" type="text" placeholder="Title" [(ngModel)]="NewPaymentForm.Title"> -->
 
-        <!-- <input    class="NewPayment-Date" type="date"> -->
+        <div class="DropShadow"><div class="PaymentForm-Title"> <input type="text" [(ngModel)]="NewPaymentForm.Title"> </div></div>
+        <div class="DropShadow"><div class="PaymentForm-Description"> <textarea id="inputText" [(ngModel)]="NewPaymentForm.Description"></textarea> </div></div>
+        <div class="DropShadow"><div class="PaymentForm-Price"> <input type="number" [(ngModel)]="NewPaymentForm.Price"> </div></div>
+        <div class="DropShadow"><div class="PaymentForm-Status"> 
+        
+            <div class="PaymentFormStatus-Title">Status</div>
 
+            <div class="PaymentFormStatus-List"></div>
+        
+        </div></div>
+        
     </div>
 
 </div>
