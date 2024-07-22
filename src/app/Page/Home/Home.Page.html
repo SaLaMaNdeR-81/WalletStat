@@ -1,14 +1,15 @@
 <div class="PageHome" >
 
-    <div class="Btn-Add Close" *ngIf="NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> X </div>
-    <div class="Btn-Add Save" *ngIf="NewPaymentMenu" (click)="SaveNewPaymentHandle()" @scaleInOut>  O </div>
-    <div class="Btn-Add" *ngIf="!NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> + </div>
+    <!-- @if(Menu.NewPayment){} -->
+    <div class="Btn-Add Close" *ngIf="Menu.NewPayment" (click)="Menu.NewPayment = !Menu.NewPayment" @scaleInOut> X </div>
+    <div class="Btn-Add Save" *ngIf="Menu.NewPayment" (click)="SaveNewPaymentHandle()" @scaleInOut>  O </div>
+    <div class="Btn-Add" *ngIf="!Menu.NewPayment" (click)="Menu.NewPayment = !Menu.NewPayment" @scaleInOut> + </div>
     
-    <!-- <div class="Btn-Add Close" *ngIf="NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> <ion-icon name="close"></ion-icon> </div> -->
-    <!-- <div class="Btn-Add Save" *ngIf="NewPaymentMenu" (click)="null" @scaleInOut> <ion-icon name="ellipse-outline"></ion-icon> </div> -->
-    <!-- <div class="Btn-Add" *ngIf="!NewPaymentMenu" (click)="NewPaymentMenu = !NewPaymentMenu" @scaleInOut> <ion-icon name="add"></ion-icon> </div> -->
+    <!-- <div class="Btn-Add Close" *ngIf="Menu.NewPayment" (click)="Menu.NewPayment = !Menu.NewPayment" @scaleInOut> <ion-icon name="close"></ion-icon> </div> -->
+    <!-- <div class="Btn-Add Save" *ngIf="Menu.NewPayment" (click)="null" @scaleInOut> <ion-icon name="ellipse-outline"></ion-icon> </div> -->
+    <!-- <div class="Btn-Add" *ngIf="!Menu.NewPayment" (click)="Menu.NewPayment = !Menu.NewPayment" @scaleInOut> <ion-icon name="add"></ion-icon> </div> -->
     
-    <div class="PaymentBox"*ngIf="!NewPaymentMenu">
+    <div class="PaymentBox"*ngIf="!Menu.NewPayment">
         
         <div class="EmptyListText" *ngIf="!PaymentData"> Empty List <ion-icon name="warning-outline"/> </div>
         <div class="EmptyListText" *ngIf="PaymentData"> PayMent List </div>
@@ -19,7 +20,7 @@
 
     </div>
 
-    <div class="NewPaymentBox" *ngIf="NewPaymentMenu" @scaleInOut>
+    <div class="NewPaymentBox" *ngIf="Menu.NewPayment" @scaleInOut>
 
         <div class="NewPaymentText"> New Payment </div>
 
@@ -29,11 +30,21 @@
         <div class="DropShadow"><div class="PaymentForm-Title"> <input type="text" [(ngModel)]="NewPaymentForm.Title"> </div></div>
         <div class="DropShadow"><div class="PaymentForm-Description"> <textarea id="inputText" [(ngModel)]="NewPaymentForm.Description"></textarea> </div></div>
         <div class="DropShadow"><div class="PaymentForm-Price"> <input type="number" [(ngModel)]="NewPaymentForm.Price"> </div></div>
-        <div class="DropShadow"><div class="PaymentForm-Status"> 
+        <div class="DropShadow"><div class="PaymentForm-Status" > 
         
-            <div class="PaymentFormStatus-Title">Status</div>
+            <div class="PaymentFormStatus-Title" (click)="Menu.Status = !Menu.Status">Status</div>
 
-            <div class="PaymentFormStatus-List"></div>
+            <div class="PaymentFormStatus-List" *ngIf="Menu.Status" @SlideDown >
+
+                <div>
+                    <div class="StatusList-Item"> Important </div>
+                    <div class="StatusList-Item"> Important </div>
+                    <div class="StatusList-Item"> Important </div>
+                    <div class="StatusList-Item"> Important </div>
+                    <div class="StatusList-Item"> Important </div>
+                </div>
+
+            </div>
         
         </div></div>
         

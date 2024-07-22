@@ -16,14 +16,28 @@ import { NewPaymentForm } from 'src/@Core/Interface/NewPayment.Interface';
       transition('* => void', [
         animate(300, style({ transform: 'scale(0)' }))
       ])
+    ]),
+    trigger('SlideDown', [
+      state('in', style({ height: '200px' })),
+      transition('void => *', [
+        style({ height: '0px' }),
+        animate(300)
+      ]),
+      transition('* => void', [
+        animate(300, style({ height: '0px' }))
+      ])
     ])
   ]
 })
 export class PageHome {
 
   PaymentData: Array<any> = []
+
+  Menu: any ={
+    NewPayment : true,
+    Status : false,
+  }
   
-  NewPaymentMenu:boolean = true
   NewPaymentForm: NewPaymentForm = {
     Title: '',
     Description: "",
