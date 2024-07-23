@@ -1,8 +1,6 @@
 <div class="PageHome" >
 
-    @if (Menu.NewPayment) {
-        <label>{{ Menu.NewPayment }}</label>
-      }
+    <!-- @if(Menu.NewPayment){} -->
     <div class="Btn-Add Close" *ngIf="Menu.NewPayment" (click)="Menu.NewPayment = !Menu.NewPayment" @scaleInOut> X </div>
     <div class="Btn-Add Save" *ngIf="Menu.NewPayment" (click)="SaveNewPaymentHandle()" @scaleInOut>  O </div>
     <div class="Btn-Add" *ngIf="!Menu.NewPayment" (click)="Menu.NewPayment = !Menu.NewPayment" @scaleInOut> + </div>
@@ -21,6 +19,9 @@
     <div class="NewPaymentBox" *ngIf="Menu.NewPayment" @scaleInOut>
 
         <div class="NewPaymentText"> New Payment </div>
+
+        <!-- <label class="NewPaymentLable-Title" > Title </label> -->
+        <!-- <input    class="NewPayment-Title Form-Box" type="text" placeholder="Title" [(ngModel)]="NewPaymentForm.Title"> -->
 
         <div class="DropShadow"><div class="PaymentForm-Title"> <input type="text" [(ngModel)]="NewPaymentForm.Title"> </div></div>
         <div class="DropShadow"><div class="PaymentForm-Description"> <textarea id="inputText" [(ngModel)]="NewPaymentForm.Description"></textarea> </div></div>
