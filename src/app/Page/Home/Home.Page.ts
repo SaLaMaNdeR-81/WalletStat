@@ -33,8 +33,9 @@ export class PageHome {
 
   PaymentData: Array<any> = []
 
-  Menu: any ={
+  public Menu: any ={
     NewPayment : true,
+    NewStatus : true,
     Status : false,
   }
   
@@ -55,24 +56,18 @@ export class PageHome {
   }
 
   constructor(){
-
     this.GetListData(500)
-
   }
 
-  GetListData(RefreshTime:number){
-
+  public GetListData(RefreshTime:number){
     setInterval(() => {
       let Data:any = localStorage.getItem("PaymentList");
       Data = JSON.parse(Data)
       this.PaymentData = Data
     },RefreshTime)
-    
   }
 
-  // =================================
-
-  SaveNewPaymentHandle(){
+  public SaveNewPaymentHandle(){
     console.log(this.NewPaymentForm);
   }
 
